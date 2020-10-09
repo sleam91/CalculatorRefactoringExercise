@@ -11,7 +11,7 @@ public class RPNCalculator {
 		GUI gameWindow = new GUISimpleWindowImpl("Calculator");
 		Calculator calculator = new Calculator();
 		Controller controller = new Controller(gameWindow, calculator);
-		
+
 		controller.start();
 	}
 

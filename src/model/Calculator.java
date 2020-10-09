@@ -40,9 +40,12 @@ public class Calculator {
 	}
 
 	private Map<String, Runnable> createOperations() {
-		return Map.ofEntries(entry("+", () -> stack.push(add())), entry("-", () -> stack.push(subtract())),
-				entry("*", () -> stack.push(multiply())), entry("/", () -> stack.push(divide())),
-				entry("c", () -> stack.clear()), entry("sin", () -> stack.push(sinus())));
+		return Map.ofEntries(entry("+", () -> stack.push(add())), 
+				entry("-", () -> stack.push(subtract())),
+				entry("*", () -> stack.push(multiply())), 
+				entry("/", () -> stack.push(divide())),
+				entry("c", () -> stack.clear()), 
+				entry("sin", () -> stack.push(sinus())));
 
 	}
 
