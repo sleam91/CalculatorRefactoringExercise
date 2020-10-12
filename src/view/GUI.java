@@ -2,14 +2,14 @@ package view;
 
 public interface GUI {
 
-	String getString();
+    String getString();
 
-	void addString(String s);
+    void addString(String s);
 
-	void clear();
+    void clear();
 
-	void exit();
+    void exit();
 
-	void showStackEmptyMessage();
+    void showStackEmptyMessage();
 
 }
