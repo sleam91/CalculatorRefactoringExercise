@@ -23,12 +23,16 @@ public class Calculator {
 	stack.clear();
     }
 
-    public Stack<Double> getStack() {
-	return stack;
-    }
-
     public Map<String, Runnable> getOperations() {
 	return operations;
+    }
+
+    public void acceptNumber(double number) {
+	stack.push(number);
+    }
+
+    public boolean isEmpty() {
+	return stack.isEmpty();
     }
 
     private double popNextValue() {
@@ -68,6 +72,11 @@ public class Calculator {
 	double value1 = popNextValue();
 	double value2 = popNextValue();
 	return value2 / value1;
+    }
+
+    @Override
+    public String toString() {
+	return stack.toString();
     }
 
 }

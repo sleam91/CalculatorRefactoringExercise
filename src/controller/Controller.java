@@ -37,19 +37,18 @@ public class Controller {
     public void handleUserInput(String input) {
 	OptionalDouble value = Utility.getDouble(input);
 	if (value.isPresent()) {
-	    calculator.getStack().push(value.getAsDouble());
+	    calculator.acceptNumber(value.getAsDouble());
 	} else {
 	    this.execute(input);
 	}
-
     }
 
     public void showStackResults() {
 	gameWindow.clear();
-	if (calculator.getStack().isEmpty()) {
+	if (calculator.isEmpty()) {
 	    showInstructions();
 	} else {
-	    gameWindow.addString(calculator.getStack().toString());
+	    gameWindow.addString(calculator.toString());
 	}
     }
 
@@ -66,7 +65,7 @@ public class Controller {
 	    calculator.calculate(input);
 	} catch (UnsupportedOperationException e) {
 	    showStackEmptyMessage();
-	    calculator.getStack().push(0.0);
+	    calculator.acceptNumber(0);
 	}
 
     }
